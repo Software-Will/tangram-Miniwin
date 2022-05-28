@@ -1,0 +1,84 @@
+#include "miniwin.h"
+#include <iostream>
+
+using namespace miniwin;
+
+int main(){
+    vredimensiona(400,400);
+	/*
+	color_rgb(102,175,35);
+	rectangulo_lleno(0,0,400,400);
+	
+	color_rgb(121,70,147);
+	rectangulo_lleno(0,0,400,200);
+	
+	color_rgb(252,180,4);//Triangulo izquierdo grande
+	for(int i = 0; i <= 200; i++){
+		linea(200-i,200-i,200-i,200+i);
+	}
+	
+	color_rgb(193,162,202);//Triangulo superior
+	for(int i = 0; i <= 200; i++){
+		linea(200-i,200-i,200+i,200-i);
+	}
+	
+	color_rgb(193,51,30);//Paralelogramo
+	for(int i = 0; i <= 100; i++){
+		linea(i,400-i,200+i,400-i);
+	}
+	
+    color_rgb(19,167,192);//Rombo
+	for(int i = 0; i <= 100; i++){
+		linea(200+i,200-i,200+i,200+i);
+		linea(400-i,200-i,400-i,200+i);
+	}
+	
+	color_rgb(246,234,68);//Triangulo inferior der
+	for(int i = 0; i <= 200; i++){
+		linea(200+i,400-i,400,400-i);
+	}*/
+	
+	//------------------------------------------------------------------------------------------
+	//FORMA CORRECTA
+	int tamVentana = 400;
+	rectangulo_lleno(0,0,tamVentana,tamVentana);
+	
+	color_rgb(193,162,202);//Triangulo superior
+	for(int i = 0; i <= 200; i++){
+		linea(200-i,200-i,200+i,200-i);
+	}
+	
+    color_rgb(252,180,4); //Triangulo izquierdo
+	for(int i = 0; i <= 200; i++){
+		linea(200-i,200-i,200-i,200+i);
+	}
+	
+	color_rgb(246,234,68);//Triangulo Inferior derecho
+	for(int i = 0; i <= 200; i++){
+		linea(200+i,400-i,400,400-i);
+	}
+	
+	color_rgb(193,51,30);//Paralelogramo
+	for(int i = 0; i <= 200; i++){
+		linea(400,0+i,300,100+i);
+	}
+	
+	color_rgb(102,175,35);//Triangulo Inferior Izquierdo
+	for(int i = 0; i <= 100; i++){
+		linea(100-i,300+i,100-i,400);
+		linea(100+i,300+i,100+i,400);
+	}
+	
+	color_rgb(19,167,192);//Rombo
+	for(int i = 0; i <= 100; i++){
+		linea(100+i,300-i,100+i,300+i);//Izq
+		linea(300-i,300-i,300-i,300+i);//Der
+	}
+	
+	color_rgb(121,70,147);//Triangulo Der al lado superior del rombo
+	for(int i = 0; i <= 100; i++){
+		linea(200+i,200-i,200+i,200+i);
+	}
+	refresca();
+	return 0;
+}
